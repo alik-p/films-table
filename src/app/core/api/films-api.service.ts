@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { RestService } from './rest.service';
 import { Observable } from 'rxjs';
-import { Film } from './film.model';
-import { ApiParams } from './api-params';
+import { Film } from './models/film.model';
+import { ApiParams } from './models/params.model';
+import { MockDbService } from './mock-db.service';
 
 enum apiUrls {
   films = '/films'
@@ -14,13 +15,14 @@ enum apiUrls {
 })
 export class FilmsApiService extends RestService {
 
-  constructor() {
+  constructor(private dbService: MockDbService) {
     super();
   }
 
 
   getFilms$(params?: ApiParams): Observable<Film[]> {
-    return super.get<Film[]>(apiUrls.films);
+    // return super.get<Film[]>(apiUrls.films);
+    return this.dbService.getFilms$(params);
   }
 
 

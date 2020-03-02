@@ -1,7 +1,7 @@
 // @ts-ignore
 import * as mockData from 'src/assets/films-mock.json';
 import { Observable, of } from 'rxjs';
-import { ApiParams } from './api-params';
+import { ApiParams } from './models/params.model';
 
 
 export abstract class RestService {

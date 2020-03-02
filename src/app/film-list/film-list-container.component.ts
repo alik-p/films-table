@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FilmsService } from './shared/films.service';
 import { Observable } from 'rxjs';
-import { Film } from '../core/api/film.model';
+import { Film } from '../core/api/models/film.model';
 
 
 
