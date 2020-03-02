@@ -1,1 +1,29 @@
 <p>film-list works!</p>
+
+<button type="button" (click)="onGenerate()">Generate</button>
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Season</th>
+    <th>Network</th>
+    <th>Premiere</th>
+  </tr>
+  </thead>
+
+  <tbody>
+
+  <tr *ngFor="let film of films">
+    <td>
+      {{film?.name}}
+      {{film?.tags}}
+    </td>
+    <td>{{film?.season}}</td>
+    <td>{{film?.network}}</td>
+    <td>{{film?.premiere | date}}</td>
+  </tr>
+
+  </tbody>
+
+</table>

@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  template: `<app-film-list-container></app-film-list-container>`,
 })
-export class AppComponent {
-  title = 'filmsTable';
-}
+export class AppComponent { }

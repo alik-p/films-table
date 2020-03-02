@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { FilmsService } from './shared/films.service';
+import { Observable } from 'rxjs';
+import { Film } from '../core/api/film.model';
+
+
 
 @Component({
-  selector: 'app-film-list',
-  templateUrl: './film-list.component.html',
-  styleUrls: ['./film-list.component.sass']
+  selector: 'app-film-list-container',
+  template: `<app-film-list [films]="films$ | async"></app-film-list>`,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FilmListContainerComponent implements OnInit {
+  films$: Observable<Film[]>;
 
-  constructor() { }
+  constructor(private filmsService: FilmsService) { }
 
   ngOnInit(): void {
+    this.films$ = this.filmsService.getAll$();
   }
 
 }
