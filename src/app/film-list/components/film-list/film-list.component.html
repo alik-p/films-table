@@ -1,6 +1,5 @@
 <div class="film-list">
 
-
   <div class="table">
 
     <div class="table--toolbar">
@@ -33,44 +32,50 @@
 
     </div>
 
-    <div class="table--head">
-      <div class="table--cell">
-        Name
-        <app-sort-icon></app-sort-icon>
-      </div>
-      <div class="table--cell">Season</div>
-      <div class="table--cell">Network</div>
-      <div class="table--cell">
-        Premiere
-        <app-sort-icon [decrease]="false"></app-sort-icon>
-      </div>
-    </div>
+    <div class="table--content">
 
-    <div class="table--row" *ngFor="let film of films">
-      <div class="table--cell">
-        {{film?.name}}
-        <div class="cell--tags">
-          <span *ngFor="let tag of film?.tags" class="tag" [ngClass]="tagClass(tag)">{{tag}}</span>
+
+      <div class="table--head">
+        <div class="table--cell">
+          Name
+          <app-sort-icon></app-sort-icon>
+        </div>
+        <div class="table--cell">Season</div>
+        <div class="table--cell">Network</div>
+        <div class="table--cell">
+          Premiere
+          <app-sort-icon [decrease]="false"></app-sort-icon>
         </div>
       </div>
-      <div class="table--cell">
-        {{film?.season}}
-      </div>
-      <div class="table--cell">
-        {{film?.network}}
-      </div>
-      <div class="table--cell">
-        {{film?.premiere | date: 'dd.MM.yyyy'}}
 
+      <div class="table--row" *ngFor="let film of films">
+        <div class="table--cell">
+          {{film?.name}}
+          <div class="cell--tags">
+            <span *ngFor="let tag of film?.tags" class="tag" [ngClass]="tagClass(tag)">{{tag}}</span>
+          </div>
+        </div>
+        <div class="table--cell">
+          {{film?.season}}
+        </div>
+        <div class="table--cell">
+          {{film?.network}}
+        </div>
+        <div class="table--cell">
+          {{film?.premiere | date: 'dd.MM.yyyy'}}
+
+        </div>
       </div>
     </div>
+
+    <div class="table--pagination">
+      <app-pagination></app-pagination>
+    </div>
+
   </div>
 
 
+
 </div>
-
-<hr>
-
-
 
 

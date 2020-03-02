@@ -5,6 +5,7 @@ $color-gray: rgb(130, 130, 130)
 $color-orange: rgb(242, 153, 74)
 $color-purple: rgb(146, 143, 214)
 $color-red: rgb(235, 87, 87)
+$color-white: #ffffff
 
 
 .film-list--table
@@ -20,13 +21,17 @@ $color-red: rgb(235, 87, 87)
     &:not(:last-child)
       padding-right: 2.5rem
 
+.table--content
+  background-color: $color-white
+
+
 *:focus
   outline: none
 
 .search-input
   display: flex
   align-items: baseline
-  color: #ffffff
+  color: $color-white
   background-color: $color-orange
   padding: 0 .75rem
 
@@ -37,11 +42,11 @@ $color-red: rgb(235, 87, 87)
   padding: .375rem .75rem
   font-size: 1rem
   font-weight: 400
-  color: #ffffff
+  color: $color-white
   background-color: $color-orange
   border: 1px solid $color-orange
   &::placeholder
-    color: #ffffff
+    color: $color-white
 
 
 .form--select
@@ -50,7 +55,7 @@ $color-red: rgb(235, 87, 87)
   padding: .375rem .75rem
   font-size: 1rem
   font-weight: 400
-  color: #ffffff
+  color: $color-white
   background-color: $color-orange
   border: 1px solid $color-orange
 
@@ -73,7 +78,7 @@ $color-red: rgb(235, 87, 87)
     padding: 0.75rem 0.5rem
 
 .table--head
-  color: #ffffff
+  color: $color-white
   background-color: rgb(147, 72, 214)
 
   .table--cell
