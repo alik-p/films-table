@@ -10,6 +10,50 @@ $color-red: rgb(235, 87, 87)
 .film-list--table
   width: 100%
 
+.table--toolbar
+  display: flex
+  justify-content: space-between
+  margin: 1rem 0
+
+  .toolbar--item
+    width: 100%
+    &:not(:last-child)
+      padding-right: 2.5rem
+
+*:focus
+  outline: none
+
+.search-input
+  display: flex
+  align-items: baseline
+  color: #ffffff
+  background-color: $color-orange
+  padding: 0 .75rem
+
+
+.form--control
+  display: block
+  width: 100%
+  padding: .375rem .75rem
+  font-size: 1rem
+  font-weight: 400
+  color: #ffffff
+  background-color: $color-orange
+  border: 1px solid $color-orange
+  &::placeholder
+    color: #ffffff
+
+
+.form--select
+  display: block
+  width: 100%
+  padding: .375rem .75rem
+  font-size: 1rem
+  font-weight: 400
+  color: #ffffff
+  background-color: $color-orange
+  border: 1px solid $color-orange
+
 
 .table--head, .table--row
   display: flex

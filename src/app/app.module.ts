@@ -5,11 +5,12 @@ import { AppComponent } from './app.component';
 import { FilmListContainerComponent } from './film-list/film-list-container.component';
 import { FilmListComponent } from './film-list/components/film-list/film-list.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     FilmListContainerComponent,
-    FilmListComponent
+    FilmListComponent,
   ],
   imports: [
     BrowserModule
@@ -17,4 +18,5 @@ import { FilmListComponent } from './film-list/components/film-list/film-list.co
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
