@@ -1,0 +1,70 @@
+$color-black: rgb(79, 79, 79)
+$color-blue: #d0e2ff
+$color-cyan: #bae6ff
+$color-gray: rgb(130, 130, 130)
+$color-orange: rgb(242, 153, 74)
+$color-purple: rgb(146, 143, 214)
+$color-red: rgb(235, 87, 87)
+
+
+.film-list--table
+  width: 100%
+
+
+.table--head, .table--row
+  display: flex
+
+  .table--cell:nth-child(1)
+    width: 40%
+
+  .table--cell
+    width: 20%
+    padding: 0.75rem 0.5rem
+
+.table--head
+  color: #ffffff
+  background-color: rgb(147, 72, 214)
+
+  .table--cell
+    padding: 0.75rem
+
+.cell--tags
+  display: flex
+  .tag
+    margin-right: 0.25rem
+
+.tag
+  padding: 0 .5rem
+  font-size: small
+  height: 1.25rem
+  max-width: 100%
+  min-width: 2rem
+  border-radius: .9rem
+  cursor: default
+  color: white
+
+  &--black
+    background-color: $color-black
+
+  &--blue
+    background-color: $color-blue
+    color: #0043ce
+
+  &--cyan
+    background-color: $color-cyan
+    color: #00539a
+
+  &--gray
+    background-color: $color-gray
+
+  &--orange
+    background-color: $color-orange
+
+  &--purple
+    background-color: $color-purple
+
+  &--red
+    background-color: $color-red
+
+
+

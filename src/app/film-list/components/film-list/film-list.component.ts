@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { AppUtils } from '../../../core/app-utils';
 import { Film } from '../../../core/api/film.model';
 
 @Component({
@@ -11,15 +10,23 @@ import { Film } from '../../../core/api/film.model';
 export class FilmListComponent implements OnInit {
   @Input() films: Film[];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
   }
 
+  tagClass(tag: string): string {
+    const colors = {
+      comedy: 'orange',
+      drams: 'purple',
+      horror: 'black',
+      'dark comedy': 'gray',
+      western: 'blue',
+      history: 'cyan',
+      documentary: 'gray',
+    };
+    return 'tag--' + (colors[tag.toLowerCase()] || 'purple');
+  }
 
-  onGenerate(): void {
-    // this.films = AppUtils.generateFilmsData(100);
-    // console.log(AppUtils.generateFilmsData(100));
+  ngOnInit(): void {
   }
 
 
