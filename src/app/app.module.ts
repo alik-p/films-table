@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FilmListContainerComponent } from './film-list/film-list-container.component';
 import { FilmListComponent } from './film-list/components/film-list/film-list.component';
+import { SortIconComponent } from './film-list/components/film-list/sort-icon.component';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { FilmListComponent } from './film-list/components/film-list/film-list.co
     AppComponent,
     FilmListContainerComponent,
     FilmListComponent,
+    SortIconComponent,
   ],
   imports: [
     BrowserModule

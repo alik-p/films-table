@@ -34,11 +34,18 @@
     </div>
 
     <div class="table--head">
-      <div class="table--cell">Name</div>
+      <div class="table--cell">
+        Name
+        <app-sort-icon></app-sort-icon>
+      </div>
       <div class="table--cell">Season</div>
       <div class="table--cell">Network</div>
-      <div class="table--cell">Premiere</div>
+      <div class="table--cell">
+        Premiere
+        <app-sort-icon [decrease]="false"></app-sort-icon>
+      </div>
     </div>
+
     <div class="table--row" *ngFor="let film of films">
       <div class="table--cell">
         {{film?.name}}
@@ -54,6 +61,7 @@
       </div>
       <div class="table--cell">
         {{film?.premiere | date: 'dd.MM.yyyy'}}
+
       </div>
     </div>
   </div>
