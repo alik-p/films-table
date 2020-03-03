@@ -1,0 +1,36 @@
+@import variables
+
+
+
+.filters--toolbar
+  display: flex
+  justify-content: space-between
+  width: 100%
+  margin: 1rem 0
+
+  .toolbar--item
+    width: 100%
+
+    &:not(:last-child)
+      padding-right: 2.5rem
+
+
+.form--control
+  display: block
+  width: 100%
+  padding: .375rem .75rem
+  font-size: 1rem
+  font-weight: 400
+  color: $color-white
+  background-color: $color-orange
+  border: 1px solid $color-orange
+  &::placeholder
+    color: $color-white
+
+
+.search-input
+  display: flex
+  align-items: baseline
+  color: $color-white
+  background-color: $color-orange
+  padding: 0 .75rem

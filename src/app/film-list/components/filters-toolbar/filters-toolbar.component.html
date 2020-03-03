@@ -1,0 +1,24 @@
+<form class="filters--toolbar" [formGroup]="form">
+  <div class="toolbar--item">
+    <div class="search-input">
+      <input type="text" class="form--control" placeholder="Name" formControlName="name">
+      <i class="fas fa-search"></i>
+    </div>
+  </div>
+  <div class="toolbar--item">
+    <select class="form--control" formControlName="tags">
+      <option disabled selected value="null">Genre</option>
+      <option [ngValue]="'western'">Western</option>
+      <option [ngValue]="'horror'">Horror</option>
+      <option [ngValue]="'comedy'">Comedy</option>
+    </select>
+  </div>
+  <div class="toolbar--item">
+    <select class="form--control" formControlName="premiere">
+      <option disabled selected value="null">Premiere Year</option>
+      <option [ngValue]="2010">2010</option>
+      <option [ngValue]="2011">2011</option>
+      <option [ngValue]="2012">2012</option>
+    </select>
+  </div>
+</form>

@@ -6,6 +6,8 @@ import { FilmListContainerComponent } from './film-list/film-list-container.comp
 import { FilmListComponent } from './film-list/components/film-list/film-list.component';
 import { SortIconComponent } from './film-list/components/film-list/sort-icon.component';
 import { PaginationComponent } from './film-list/components/pagination/pagination.component';
+import { FiltersToolbarComponent } from './film-list/components/filters-toolbar/filters-toolbar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,9 +17,11 @@ import { PaginationComponent } from './film-list/components/pagination/paginatio
     FilmListComponent,
     SortIconComponent,
     PaginationComponent,
+    FiltersToolbarComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
