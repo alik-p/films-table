@@ -3,37 +3,11 @@
   <div class="table">
 
     <div class="table--toolbar">
-
-      <div class="toolbar--item">
-        <div class="search-input">
-          <input type="text" class="form--control" placeholder="Name">
-          <i class="fas fa-search"></i>
-        </div>
-
-      </div>
-
-      <div class="toolbar--item">
-        <select class="form--control">
-          <option disabled selected>Genre</option>
-          <option>One</option>
-          <option>Two</option>
-          <option>Three</option>
-        </select>
-      </div>
-
-      <div class="toolbar--item">
-        <select class="form--control">
-          <option disabled selected>Premiere Year</option>
-          <option>One</option>
-          <option>Two</option>
-          <option>Three</option>
-        </select>
-      </div>
-
+      <app-filters-toolbar (changes)="onChangesFilters($event)"></app-filters-toolbar>
     </div>
 
-    <div class="table--content">
 
+    <div class="table--content">
 
       <div class="table--head">
         <div class="table--cell">
@@ -63,7 +37,6 @@
         </div>
         <div class="table--cell">
           {{film?.premiere | date: 'dd.MM.yyyy'}}
-
         </div>
       </div>
     </div>
@@ -73,7 +46,6 @@
     </div>
 
   </div>
-
 
 
 </div>

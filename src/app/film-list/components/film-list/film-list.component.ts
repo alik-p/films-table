@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Film } from '../../../core/api/models/film.model';
+import { Filters } from '../../shared/models/filters.model';
 
 @Component({
   selector: 'app-film-list',
@@ -27,6 +28,12 @@ export class FilmListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+
+  onChangesFilters(filters: Filters): void {
+    console.log('onChangesFilters: ', filters);
+
   }
 
 

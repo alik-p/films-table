@@ -1,63 +1,17 @@
-$color-black: rgb(79, 79, 79)
-$color-blue: #d0e2ff
-$color-cyan: #bae6ff
-$color-gray: rgb(130, 130, 130)
-$color-orange: rgb(242, 153, 74)
-$color-purple: rgb(146, 143, 214)
-$color-red: rgb(235, 87, 87)
-$color-white: #ffffff
+@import variables
 
 
 .film-list--table
   width: 100%
 
 .table--toolbar
-  display: flex
-  justify-content: space-between
-  margin: 1rem 0
+  width: 100%
+  margin: 1.5rem 0
 
-  .toolbar--item
-    width: 100%
-    &:not(:last-child)
-      padding-right: 2.5rem
 
 .table--content
   background-color: $color-white
 
-
-*:focus
-  outline: none
-
-.search-input
-  display: flex
-  align-items: baseline
-  color: $color-white
-  background-color: $color-orange
-  padding: 0 .75rem
-
-
-.form--control
-  display: block
-  width: 100%
-  padding: .375rem .75rem
-  font-size: 1rem
-  font-weight: 400
-  color: $color-white
-  background-color: $color-orange
-  border: 1px solid $color-orange
-  &::placeholder
-    color: $color-white
-
-
-.form--select
-  display: block
-  width: 100%
-  padding: .375rem .75rem
-  font-size: 1rem
-  font-weight: 400
-  color: $color-white
-  background-color: $color-orange
-  border: 1px solid $color-orange
 
 
 .table--head
