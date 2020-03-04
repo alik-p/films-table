@@ -1,0 +1,80 @@
+@import variables
+
+.table
+  background-color: $color-white
+
+  &--content
+    padding: .5rem 1rem
+    font-size: 1rem
+    font-weight: 500
+
+  &--toolbar
+    width: 100%
+    margin: 1.5rem 0
+
+
+.table--head
+  .table--cell
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+
+.table--head, .table--row
+  display: flex
+
+  .table--cell:nth-child(1)
+    width: 40%
+
+  .table--cell
+    width: 20%
+    padding: 0.75rem 0.5rem
+
+.table--head
+  color: $color-white
+  background-color: rgb(147, 72, 214)
+
+  .table--cell
+    padding: 0.75rem
+
+
+.cell--tags
+  display: flex
+  margin-top: .5rem
+
+  .tag
+    margin-right: 0.25rem
+
+.tag
+  padding: 0 .5rem
+  font-size: small
+  font-weight: initial
+  height: 1.25rem
+  max-width: 100%
+  min-width: 2rem
+  border-radius: .9rem
+  cursor: default
+  color: white
+
+  &--black
+    background-color: $color-black
+
+  &--blue
+    background-color: $color-blue
+    color: #0043ce
+
+  &--cyan
+    background-color: $color-cyan
+    color: #00539a
+
+  &--gray
+    background-color: $color-gray
+
+  &--orange
+    background-color: $color-orange
+
+  &--purple
+    background-color: $color-purple
+
+  &--red
+    background-color: $color-red

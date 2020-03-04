@@ -1,0 +1,19 @@
+<div class="table--toolbar">
+  <app-filters-toolbar
+    [lookup]="lookup$ | async"
+    (changes)="onChangesFilters($event)">
+  </app-filters-toolbar>
+</div>
+<div class="table--content">
+  <app-film-list
+    [films]="films$ | async"
+    [lookup]="lookup$ | async"
+    (sortChange)="onSortChange($event)">
+  </app-film-list>
+</div>
+<div class="table--pagination">
+  <app-pagination
+    [pagination]="pagination$ | async"
+    (paginationChange)="onChangesPagination($event)"
+  ></app-pagination>
+</div>

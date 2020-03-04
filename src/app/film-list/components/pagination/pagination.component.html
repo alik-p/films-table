@@ -1,0 +1,45 @@
+<div class="pagination">
+  <div>
+    <strong>Total: {{pagination.total}}</strong>
+  </div>
+  <div class="button--group">
+    <button
+      type="button" class="btn btn--circle"
+      [disabled]="pagination.isPageFirst()"
+      (click)="onPagePrev()">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <ng-container *ngFor="let page of pageButtons">
+      <button
+        *ngIf="!isPageDisabled(page)"
+        type="button" class="btn btn--circle"
+        [ngClass]="{'_selected': isPageSelected(page)}"
+        [disabled]="isPageDisabled(page)"
+        (click)="onPageSelect(page)">
+        {{page}}
+      </button>
+    </ng-container>
+    <button
+      type="button" class="btn btn--circle"
+      [disabled]="pagination.isPageLast()"
+      (click)="onPageNext()">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+  <div class="button--group">
+    <ng-container *ngFor="let size of pageSizeButtons">
+      <button
+        type="button" class="btn btn--rectangle"
+        [ngClass]="{'_selected': isSizeSelected(size)}"
+        (click)="onSizeSelect(size)">
+        {{size}}
+      </button>
+    </ng-container>
+    <button
+      type="button" class="btn btn--rectangle"
+      [ngClass]="{'_selected': isSizeSelected(null)}"
+      (click)="onSizeSelect(null)">
+      All
+    </button>
+  </div>
+</div>
