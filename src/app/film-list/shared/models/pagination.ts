@@ -1,4 +1,4 @@
-import { ApiPagination } from '../../../core/api/models/pagination.model';
+import { ApiPagination } from 'src/app/core/api';
 
 
 export class Pagination implements ApiPagination {
@@ -35,6 +35,7 @@ export class Pagination implements ApiPagination {
   isPageFirst(): boolean {
     return this.pageNumber === 1;
   }
+
 
   isPageLast(): boolean {
     return this.pageSize * this.pageNumber >= this.total;

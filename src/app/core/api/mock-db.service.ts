@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as mockData from 'src/assets/films-mock.json';
+import * as mockData from 'src/assets/data/films-mock.json';
 import { Film } from './models/film.model';
 import { Observable, of } from 'rxjs';
 import { ApiParams } from './models/params.model';
@@ -12,13 +12,7 @@ export class MockDbService {
 
   private readonly films: Film[] = mockData['default']['films'];
 
-  constructor() {
-  }
-
-
-  getAll$(): Observable<Film[]> {
-    return of(this.films);
-  }
+  constructor() { }
 
 
   getGenres$(): Observable<string[]> {
@@ -69,6 +63,7 @@ export class MockDbService {
       ? films.filter(film => film.tags.some(tag => tags.includes(tag)))
       : films;
   }
+
 
   private filterByYear(films: Film[], year: number): Film[] {
     return year

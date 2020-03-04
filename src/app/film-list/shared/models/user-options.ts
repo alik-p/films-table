@@ -3,6 +3,7 @@ import { ApiParams } from '../../../core/api/models/params.model';
 import { SortField } from './sort-field';
 import { Pagination } from './pagination';
 
+
 export class UserOptions {
 
   private filters: Filters;
@@ -10,11 +11,11 @@ export class UserOptions {
   private sort: Set<string>;
 
   constructor() {
-    // Defaults:
     this.filters = {name: null, tags: null, premiere: null};
-    this.pagination = Pagination.create(); // {pageNumber: 1, pageSize: 5};
+    this.pagination = Pagination.create();
     this.sort = new Set();
   }
+
 
   setFilters(filters: Filters) {
     this.filters = {...this.filters, ...filters};

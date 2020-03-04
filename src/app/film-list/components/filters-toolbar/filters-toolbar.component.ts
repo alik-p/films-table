@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Filters } from '../../../core/api/models/filters.model';
+import { Filters } from 'src/app/core/api';
 import { debounceTime, takeWhile } from 'rxjs/operators';
 import { Lookup } from '../../shared/models/lookup';
 
@@ -20,12 +20,13 @@ export class FiltersToolbarComponent implements OnInit, OnDestroy {
 
   private alive = true;
 
-  constructor(private formBuilder: FormBuilder) {
-  }
+  constructor(private formBuilder: FormBuilder) { }
+
 
   ngOnInit(): void {
     this.initForm();
   }
+
 
   ngOnDestroy(): void {
     this.alive = false;
@@ -46,6 +47,7 @@ export class FiltersToolbarComponent implements OnInit, OnDestroy {
       )
       .subscribe(res => this.changes.emit(res));
   }
+
 
   private createForm(): FormGroup {
     const controls: Filters = {

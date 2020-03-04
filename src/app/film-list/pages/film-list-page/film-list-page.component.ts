@@ -1,9 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FilmsService } from '../../shared/films.service';
 import { Observable } from 'rxjs';
-import { Film } from '../../../core/api/models/film.model';
+import { Film, Filters } from 'src/app/core/api';
 import { UserOptions } from '../../shared/models/user-options';
-import { Filters } from '../../../core/api/models/filters.model';
 import { Lookup } from '../../shared/models/lookup';
 import { SortField } from '../../shared/models/sort-field';
 import { Pagination } from '../../shared/models/pagination';
@@ -38,6 +37,7 @@ export class FilmListPageComponent implements OnInit {
     this.options.setFilters(filters);
     this.loadFilms$();
   }
+
 
   onChangesPagination(pagination: Pagination): void {
     this.options.setPagination(pagination);

@@ -25,5 +25,4 @@ import { FilmListPageComponent } from './pages/film-list-page/film-list-page.com
     FilmListPageComponent,
   ]
 })
-export class FilmListModule {
-}
+export class FilmListModule { }

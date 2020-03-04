@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Film } from '../../../core/api/models/film.model';
+import { Film } from 'src/app/core/api';
 import { Lookup } from '../../shared/models/lookup';
 import { SortDirection, SortField } from '../../shared/models/sort-field';
+
 
 @Component({
   selector: 'app-film-list',
@@ -14,8 +15,7 @@ export class FilmListComponent implements OnInit {
   @Input() lookup: Lookup;
   @Output() sortChange = new EventEmitter<SortField>();
 
-  constructor() {
-  }
+  constructor() { }
 
   tagClass(tag: string): string {
     const colors = {
@@ -29,6 +29,7 @@ export class FilmListComponent implements OnInit {
     };
     return 'tag--' + (colors[tag.toLowerCase()] || 'purple');
   }
+
 
   ngOnInit(): void {
   }

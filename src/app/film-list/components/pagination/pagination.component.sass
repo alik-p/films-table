@@ -1,6 +1,4 @@
-// TODO move to _variables
-$color-orange: rgb(242, 153, 74)
-$color-white: #ffffff
+@import variables
 
 .pagination
   display: flex
@@ -8,7 +6,6 @@ $color-white: #ffffff
   justify-content: space-between
   @media screen and (min-width: 672px)
     flex-direction: row
-
 
 
 .button--group
@@ -33,7 +30,6 @@ $color-white: #ffffff
   &:disabled
     cursor: not-allowed
 
-
   &._selected
     background-color: $color-orange
     color: $color-white
@@ -44,6 +40,3 @@ $color-white: #ffffff
 
 .btn--rectangle
   border-radius: 0
-
-
-

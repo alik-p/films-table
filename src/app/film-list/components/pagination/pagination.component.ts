@@ -14,7 +14,6 @@ export class PaginationComponent implements OnInit {
 
   pageButtons: number[];
 
-
   constructor() {
     this.initPageButtons();
   }
@@ -24,8 +23,7 @@ export class PaginationComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 
   isPageDisabled(page: number): boolean {
@@ -36,6 +34,7 @@ export class PaginationComponent implements OnInit {
   isPageSelected(page: number): boolean {
     return this.pagination.pageNumber === page;
   }
+
 
   isSizeSelected(size: number): boolean {
     return this.pagination.pageSize === size;

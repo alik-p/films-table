@@ -1,4 +1,4 @@
-import { Film } from './api/models/film.model';
+import { Film } from './api';
 
 export class AppUtils {
 

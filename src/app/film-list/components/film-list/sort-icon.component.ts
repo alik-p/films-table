@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { SortDirection } from '../../shared/models/sort-field';
 
+
 @Component({
   selector: 'app-sort-icon',
   template: `
@@ -18,8 +19,7 @@ export class SortIconComponent implements OnInit {
 
   private decrease: boolean;
 
-  constructor() {
-  }
+  constructor() { }
 
   get classDown(): string {
     return this.decrease === false ? 'fa-caret-down' : 'fa-angle-down';
@@ -29,8 +29,8 @@ export class SortIconComponent implements OnInit {
     return this.decrease === true ? 'fa-caret-up' : 'fa-angle-up';
   }
 
-  ngOnInit(): void {
-  }
+
+  ngOnInit(): void { }
 
 
   onUp(): void {

@@ -32,6 +32,7 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
+                "src/assets/data",
                 "src/assets/sass"
               ]
             },

@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Film } from '../../core/api/models/film.model';
-import { FilmsApiService } from '../../core/api/films-api.service';
+import { Film, FilmsApiService } from 'src/app/core/api';
 import { BehaviorSubject, Observable, zip } from 'rxjs';
 import { UserOptions } from './models/user-options';
 import { Lookup } from './models/lookup';
 import { map, tap } from 'rxjs/operators';
 import { Pagination } from './models/pagination';
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,6 @@ export class FilmsService {
   pagination$: Observable<Pagination>;
 
   private paginationSubj$ = new BehaviorSubject<Pagination>(undefined);
-
 
   constructor(private filmsApiService: FilmsApiService) {
     this.pagination$ = this.paginationSubj$.asObservable();

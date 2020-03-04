@@ -1,22 +1,19 @@
 import { Injectable } from '@angular/core';
-import { RestService } from './rest.service';
 import { Observable } from 'rxjs';
-import { Film } from './models/film.model';
 import { ApiParams } from './models/params.model';
 import { MockDbService } from './mock-db.service';
 import { ApiResponse } from './models/response.model';
 import { map } from 'rxjs/operators';
+import { Film } from './models/film.model';
 import { ApiPagination } from './models/pagination.model';
-
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class FilmsApiService extends RestService {
+export class FilmsApiService {
 
   constructor(private dbService: MockDbService) {
-    super();
   }
 
 
@@ -39,9 +36,9 @@ export class FilmsApiService extends RestService {
 
 
   private getPage(films: Film[], pagination: ApiPagination): Film[] {
-     const begin = pagination.pageNumber - 1;
-     const end = begin + pagination.pageSize;
-     return (begin  < end) ? films.slice(begin, end) : films;
+    const begin = pagination.pageNumber - 1;
+    const end = begin + pagination.pageSize;
+    return (begin < end) ? films.slice(begin, end) : films;
   }
 
 
@@ -57,8 +54,6 @@ export class FilmsApiService extends RestService {
     const total = films.length;
     return {pageNumber, pageSize, total};
   }
-
-
 
 
 }
