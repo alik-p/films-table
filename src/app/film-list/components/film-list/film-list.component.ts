@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Film } from '../../../core/api/models/film.model';
-import { Filters } from '../../shared/models/filters.model';
+import { Filters } from '../../../core/api/models/filters.model';
 
 @Component({
   selector: 'app-film-list',
@@ -10,6 +10,8 @@ import { Filters } from '../../shared/models/filters.model';
 })
 export class FilmListComponent implements OnInit {
   @Input() films: Film[];
+  @Output() filtersChange = new EventEmitter<Filters>();
+
 
   constructor() {
   }
@@ -32,8 +34,7 @@ export class FilmListComponent implements OnInit {
 
 
   onChangesFilters(filters: Filters): void {
-    console.log('onChangesFilters: ', filters);
-
+    this.filtersChange.emit(filters);
   }
 
 

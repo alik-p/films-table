@@ -2,40 +2,42 @@
   "films": [
     {
       "id": 1,
-      "name": "Film Name 1",
+      "name": "The Terror",
       "network": [
-        "HBO",
-        "Netflix"
+        "AMC"
       ],
       "premiere": 1321311827711,
-      "season": 7,
+      "season": 3,
       "tags": [
-        "dark comedy"
+        "horror",
+        "drama"
       ]
     },
     {
       "id": 2,
-      "name": "Film Name 2",
+      "name": "Better Call Saul",
       "network": [
+        "AMC",
         "Netflix"
       ],
       "premiere": 1214372837811,
-      "season": 8,
+      "season": 4,
       "tags": [
-        "western"
+        "crime",
+        "tragedy"
       ]
     },
     {
       "id": 3,
-      "name": "Film Name 3",
+      "name": "Preacher",
       "network": [
-        "HBO",
-        "Netflix"
+        "AMC"
       ],
       "premiere": 963745073597,
       "season": 6,
       "tags": [
-        "comedy"
+        "drams",
+        "dark comedy"
       ]
     },
     {

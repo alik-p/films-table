@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Filters } from '../../shared/models/filters.model';
+import { Filters } from '../../../core/api/models/filters.model';
 import { debounceTime, takeWhile } from 'rxjs/operators';
 
 
