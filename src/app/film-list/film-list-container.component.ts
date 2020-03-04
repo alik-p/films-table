@@ -6,6 +6,7 @@ import { UserOptions } from './shared/models/user-options';
 import { Filters } from '../core/api/models/filters.model';
 import { Lookup } from './shared/models/lookup';
 import { SortField } from './shared/models/sort-field';
+import { Pagination } from './shared/models/pagination';
 
 
 @Component({
@@ -14,7 +15,9 @@ import { SortField } from './shared/models/sort-field';
     <app-film-list
       [films]="films$ | async"
       [lookup]="lookup$ | async"
+      [pagination]="pagination$ | async"
       (filtersChange)="onFiltersChange($event)"
+      (paginationChange)="onPaginationChange($event)"
       (sortChange)="onSortChange($event)">
     </app-film-list>
   `,
@@ -23,6 +26,7 @@ import { SortField } from './shared/models/sort-field';
 export class FilmListContainerComponent implements OnInit {
   films$: Observable<Film[]>;
   lookup$: Observable<Lookup>;
+  pagination$: Observable<Pagination>;
 
   options: UserOptions;
 
@@ -32,8 +36,10 @@ export class FilmListContainerComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.films$ = this.filmsService.getAll$();
+    // this.films$ = this.filmsService.getAll$();
     this.lookup$ = this.filmsService.lookup$();
+    this.pagination$ = this.filmsService.pagination$;
+    this.loadFilms$();
   }
 
 
@@ -42,8 +48,13 @@ export class FilmListContainerComponent implements OnInit {
     this.loadFilms$();
   }
 
+  onPaginationChange(pagination: Pagination): void {
+    this.options.setPagination(pagination);
+    this.loadFilms$();
+  }
+
+
   onSortChange(option: SortField): void {
-    console.log('onSortChange: ', option);
     this.options.setSorting(option);
     this.loadFilms$();
   }

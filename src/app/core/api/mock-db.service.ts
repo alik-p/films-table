@@ -76,6 +76,7 @@ export class MockDbService {
       : films;
   }
 
+
   private sort(films: Film[], options: string[]): Film[] {
     if (options) {
       options.reverse().forEach(option => {

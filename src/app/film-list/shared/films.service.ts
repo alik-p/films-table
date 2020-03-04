@@ -1,31 +1,33 @@
 import { Injectable } from '@angular/core';
 import { Film } from '../../core/api/models/film.model';
 import { FilmsApiService } from '../../core/api/films-api.service';
-import { Observable, zip } from 'rxjs';
+import { BehaviorSubject, Observable, zip } from 'rxjs';
 import { UserOptions } from './models/user-options';
 import { Lookup } from './models/lookup';
-import { map, switchMap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
+import { Pagination } from './models/pagination';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FilmsService {
 
+  pagination$: Observable<Pagination>;
+
+  private paginationSubj$ = new BehaviorSubject<Pagination>(undefined);
+
 
   constructor(private filmsApiService: FilmsApiService) {
-  }
-
-  getAll$(): Observable<Film[]> {
-    return this.filmsApiService.getFilms$();
+    this.pagination$ = this.paginationSubj$.asObservable();
   }
 
 
   getFilms$(options: UserOptions): Observable<Film[]> {
-    return this.filmsApiService.getFilms$(options.toApiParams());
-  }
-
-  genres$(): Observable<string[]> {
-    return this.filmsApiService.getGenres$();
+    return this.filmsApiService.getFilms$(options.toApiParams())
+      .pipe(
+        tap(res => this.paginationSubj$.next(Pagination.init(res.pagination))),
+        map(res => res.content)
+      );
   }
 
 

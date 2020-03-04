@@ -1,6 +1,8 @@
 import { Film } from './film.model';
-import { ApiPagination } from './params.model';
+import { ApiPagination } from './pagination.model';
 
-export interface ApiResponse extends ApiPagination {
-  data: Film[];
+
+export interface ApiResponse {
+  content: Film[];
+  pagination: ApiPagination;
 }

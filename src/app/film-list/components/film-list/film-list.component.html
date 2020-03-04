@@ -38,7 +38,10 @@
       </div>
     </div>
     <div class="table--pagination">
-      <app-pagination></app-pagination>
+      <app-pagination
+        [pagination]="pagination"
+        (paginationChange)="onPaginationChange()"
+      ></app-pagination>
     </div>
   </div>
 </div>
