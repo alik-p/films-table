@@ -1,19 +1,22 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { SortDirection } from '../../shared/models/sort-field';
 
 @Component({
   selector: 'app-sort-icon',
   template: `
     <div class="sort-icon">
-      <i class="fas" [ngClass]="classUp"></i>
-      <i class="fas" [ngClass]="classDown"></i>
+      <i class="fas" [ngClass]="classUp" (click)="onUp()"></i>
+      <i class="fas" [ngClass]="classDown" (click)="onDown()"></i>
     </div>
   `,
   styles: [
-    '.sort-icon {display: flex; flex-direction: column}'
+    '.sort-icon {display: flex; flex-direction: column; cursor: pointer;}',
   ]
 })
 export class SortIconComponent implements OnInit {
-  @Input() decrease;
+  @Output() sortChange = new EventEmitter<SortDirection>();
+
+  private decrease: boolean;
 
   constructor() {
   }
@@ -27,6 +30,27 @@ export class SortIconComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+
+  onUp(): void {
+    this.toggleDecrease(true);
+  }
+
+
+  onDown(): void {
+    this.toggleDecrease(false);
+  }
+
+
+  private toggleDecrease(flag: boolean) {
+    if (this.decrease === flag) {
+      this.decrease = null;
+      this.sortChange.emit(0);
+    } else {
+      this.decrease = flag;
+      this.sortChange.emit(flag ? -1 : 1);
+    }
   }
 
 }

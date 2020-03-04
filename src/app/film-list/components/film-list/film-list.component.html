@@ -10,13 +10,13 @@
       <div class="table--head">
         <div class="table--cell">
           Name
-          <app-sort-icon></app-sort-icon>
+          <app-sort-icon (sortChange)="onSort($event, 'name')"></app-sort-icon>
         </div>
         <div class="table--cell">Season</div>
         <div class="table--cell">Network</div>
         <div class="table--cell">
           Premiere
-          <app-sort-icon [decrease]="false"></app-sort-icon>
+          <app-sort-icon (sortChange)="onSort($event, 'premiere')"></app-sort-icon>
         </div>
       </div>
       <div class="table--row" *ngFor="let film of films">

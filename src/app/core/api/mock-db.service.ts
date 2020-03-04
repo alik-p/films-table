@@ -33,15 +33,17 @@ export class MockDbService {
     const name = filters && filters.name;
     const tags = filters && filters.tags && [filters.tags];
     const year = filters && filters.premiere;
-    return of(
-      this.filterByTags(
-        this.filterByName(
-          this.filterByYear(this.films, year),
-          name
-        ),
-        tags
-      )
+    const sort = params && params.sort;
+    const films = this.films;
+    let result: Film[] = this.filterByTags(
+      this.filterByName(
+        this.filterByYear(films, year),
+        name
+      ),
+      tags
     );
+    result = this.sort(result, sort);
+    return of(result);
   }
 
 
@@ -72,7 +74,26 @@ export class MockDbService {
     return year
       ? films.filter(film => new Date(film.premiere).getFullYear() === year)
       : films;
+  }
 
+  private sort(films: Film[], options: string[]): Film[] {
+    if (options) {
+      options.reverse().forEach(option => {
+        const reverse = option.startsWith('-');
+        const key = reverse ? option.substr(1) : option;
+        films.sort((a, b) =>
+          reverse
+            ? -1 * this.compare(a[key], b[key])
+            : this.compare(a[key], b[key])
+        );
+      });
+    }
+    return films;
+  }
+
+
+  private compare(a: string | number, b: string | number): -1 | 0 | 1 {
+    return a < b ? -1 : (a > b ? 1 : 0);
   }
 
 

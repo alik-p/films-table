@@ -3,6 +3,6 @@ import { Filters } from './filters.model';
 
 
 export interface ApiParams extends ApiPagination {
-  sort?: string | string[];
+  sort?: string[];
   filters?: Filters;
 }

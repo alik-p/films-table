@@ -21,7 +21,6 @@ export class FilmsApiService extends RestService {
 
 
   getFilms$(params?: ApiParams): Observable<Film[]> {
-    // return super.get<Film[]>(apiUrls.films);
     return this.dbService.getFilms$(params);
   }
 
@@ -29,6 +28,7 @@ export class FilmsApiService extends RestService {
   getGenres$(): Observable<string[]> {
     return this.dbService.getGenres$();
   }
+
 
   getYears$(): Observable<number[]> {
     return this.dbService.getYears$();

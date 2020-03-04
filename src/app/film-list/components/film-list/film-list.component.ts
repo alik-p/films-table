@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output
 import { Film } from '../../../core/api/models/film.model';
 import { Filters } from '../../../core/api/models/filters.model';
 import { Lookup } from '../../shared/models/lookup';
+import { SortDirection, SortField } from '../../shared/models/sort-field';
 
 @Component({
   selector: 'app-film-list',
@@ -13,7 +14,7 @@ export class FilmListComponent implements OnInit {
   @Input() films: Film[];
   @Input() lookup: Lookup;
   @Output() filtersChange = new EventEmitter<Filters>();
-
+  @Output() sortChange = new EventEmitter<SortField>();
 
   constructor() {
   }
@@ -37,6 +38,10 @@ export class FilmListComponent implements OnInit {
 
   onChangesFilters(filters: Filters): void {
     this.filtersChange.emit(filters);
+  }
+
+  onSort(direction: SortDirection, field: string): void {
+    this.sortChange.emit({direction, field});
   }
 
 

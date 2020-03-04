@@ -5,6 +5,7 @@ import { Film } from '../core/api/models/film.model';
 import { UserOptions } from './shared/models/user-options';
 import { Filters } from '../core/api/models/filters.model';
 import { Lookup } from './shared/models/lookup';
+import { SortField } from './shared/models/sort-field';
 
 
 @Component({
@@ -13,7 +14,8 @@ import { Lookup } from './shared/models/lookup';
     <app-film-list
       [films]="films$ | async"
       [lookup]="lookup$ | async"
-      (filtersChange)="onFiltersChange($event)">
+      (filtersChange)="onFiltersChange($event)"
+      (sortChange)="onSortChange($event)">
     </app-film-list>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -37,6 +39,12 @@ export class FilmListContainerComponent implements OnInit {
 
   onFiltersChange(filters: Filters): void {
     this.options.setFilters(filters);
+    this.loadFilms$();
+  }
+
+  onSortChange(option: SortField): void {
+    console.log('onSortChange: ', option);
+    this.options.setSorting(option);
     this.loadFilms$();
   }
 
