@@ -1,6 +1,10 @@
 {
   "name": "films-table",
   "version": "1.0.0",
+  "author": {
+    "name": "Aliaksandr Papko",
+    "email": "aliaksandr.papko@gmail.com"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
