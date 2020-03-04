@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Film } from '../../../core/api/models/film.model';
 import { Filters } from '../../../core/api/models/filters.model';
+import { Lookup } from '../../shared/models/lookup';
 
 @Component({
   selector: 'app-film-list',
@@ -10,6 +11,7 @@ import { Filters } from '../../../core/api/models/filters.model';
 })
 export class FilmListComponent implements OnInit {
   @Input() films: Film[];
+  @Input() lookup: Lookup;
   @Output() filtersChange = new EventEmitter<Filters>();
 
 

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Film } from '../core/api/models/film.model';
 import { UserOptions } from './shared/models/user-options';
 import { Filters } from '../core/api/models/filters.model';
+import { Lookup } from './shared/models/lookup';
 
 
 @Component({
@@ -11,6 +12,7 @@ import { Filters } from '../core/api/models/filters.model';
   template: `
     <app-film-list
       [films]="films$ | async"
+      [lookup]="lookup$ | async"
       (filtersChange)="onFiltersChange($event)">
     </app-film-list>
   `,
@@ -18,6 +20,7 @@ import { Filters } from '../core/api/models/filters.model';
 })
 export class FilmListContainerComponent implements OnInit {
   films$: Observable<Film[]>;
+  lookup$: Observable<Lookup>;
 
   options: UserOptions;
 
@@ -28,6 +31,7 @@ export class FilmListContainerComponent implements OnInit {
 
   ngOnInit(): void {
     this.films$ = this.filmsService.getAll$();
+    this.lookup$ = this.filmsService.lookup$();
   }
 
 

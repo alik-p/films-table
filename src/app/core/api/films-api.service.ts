@@ -26,4 +26,13 @@ export class FilmsApiService extends RestService {
   }
 
 
+  getGenres$(): Observable<string[]> {
+    return this.dbService.getGenres$();
+  }
+
+  getYears$(): Observable<number[]> {
+    return this.dbService.getYears$();
+  }
+
+
 }

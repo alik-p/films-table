@@ -7,18 +7,24 @@
   </div>
   <div class="toolbar--item">
     <select class="form--control" formControlName="tags">
-      <option disabled selected value="null">Genre</option>
-      <option [ngValue]="'western'">Western</option>
-      <option [ngValue]="'horror'">Horror</option>
-      <option [ngValue]="'comedy'">Comedy</option>
+      <option disabled selected [ngValue]="null">Genre</option>
+      <option [ngValue]="null">- None -</option>
+      <option
+        *ngFor="let genre of lookup?.genres"
+        [ngValue]="genre">
+        {{genre | titlecase}}
+      </option>
     </select>
   </div>
   <div class="toolbar--item">
     <select class="form--control" formControlName="premiere">
-      <option disabled selected value="null">Premiere Year</option>
-      <option [ngValue]="2010">2010</option>
-      <option [ngValue]="2011">2011</option>
-      <option [ngValue]="2012">2012</option>
+      <option disabled selected [ngValue]="null">Premiere Year</option>
+      <option [ngValue]="null">- None -</option>
+      <option
+        *ngFor="let year of lookup?.years"
+        [ngValue]="year">
+        {{year}}
+      </option>
     </select>
   </div>
 </form>

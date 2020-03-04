@@ -15,8 +15,16 @@ export class MockDbService {
   constructor() {
   }
 
+
   getAll$(): Observable<Film[]> {
     return of(this.films);
+  }
+
+
+  getGenres$(): Observable<string[]> {
+    const genres = new Set<string>();
+    this.films.forEach(film => film.tags.forEach(tag => genres.add(tag)));
+    return of([...genres]);
   }
 
 
@@ -33,6 +41,16 @@ export class MockDbService {
         ),
         tags
       )
+    );
+  }
+
+
+  getYears$(): Observable<number[]> {
+    return of(
+      this.films
+        .map(film => new Date(film.premiere).getFullYear())
+        .filter((year, index, self) => self.indexOf(year) === index)
+        .sort((a, b) => a - b)
     );
   }
 

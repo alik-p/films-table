@@ -3,7 +3,7 @@ import { Film } from './api/models/film.model';
 export class AppUtils {
 
   static generateFilmsData(count: number): Film[] {
-    const tags: string[] = ['drams', 'horror', 'comedy', 'western', 'dark comedy', 'documentary', 'history'];
+    const tags: string[] = ['drama', 'horror', 'comedy', 'western', 'dark comedy', 'documentary', 'history'];
     const networks: string[] = ['AMC', 'Netflix', 'HBO'];
     const startDate = 819151200000;
     const endDate: number = Date.now();
