@@ -12,6 +12,7 @@ import { Pagination } from '../../shared/models/pagination';
 @Component({
   selector: 'app-film-list-page',
   templateUrl: './film-list-page.component.html',
+  styleUrls: ['./film-list-page.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FilmListPageComponent implements OnInit {

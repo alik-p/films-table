@@ -4,12 +4,15 @@ $color-white: #ffffff
 
 .pagination
   display: flex
+  flex-direction: column
   justify-content: space-between
+  @media screen and (min-width: 672px)
+    flex-direction: row
+
 
 
 .button--group
   display: flex
-
 
 .btn
   height: 40px

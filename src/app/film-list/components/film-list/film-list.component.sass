@@ -4,10 +4,14 @@
 .table
   background-color: $color-white
 
+  &--content
+    padding: .5rem 1rem
+    font-size: 1rem
+    font-weight: 500
 
-.table--toolbar
-  width: 100%
-  margin: 1.5rem 0
+  &--toolbar
+    width: 100%
+    margin: 1.5rem 0
 
 
 .table--head
@@ -34,8 +38,10 @@
   .table--cell
     padding: 0.75rem
 
+
 .cell--tags
   display: flex
+  margin-top: .5rem
 
   .tag
     margin-right: 0.25rem
@@ -43,6 +49,7 @@
 .tag
   padding: 0 .5rem
   font-size: small
+  font-weight: initial
   height: 1.25rem
   max-width: 100%
   min-width: 2rem
